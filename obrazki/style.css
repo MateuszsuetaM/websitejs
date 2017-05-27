@@ -1,0 +1,38 @@
+body {
+    background-image: url('tel.jpg');
+    /*width:100%;*/
+    /*background-color: blue;*/
+    /*margin: 0 auto;*/
+    background-size:     cover;
+    /*background-repeat:   no-repeat;*/
+    /*background-position: center center;*/
+  }
+
+@media only screen and (min-width: 650px) {
+    body {
+        background-image: url('wieloryb.png');
+        background-size:     cover;
+    }
+}
+@media only screen and (min-width: 800px) {
+    body {
+        background-image: url('sliwka.jpg');
+        background-size:cover;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    body {
+        background-image: url('purpurowy.jpg');
+        background-size:     cover;
+    }
+}
+img {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#clear{
+  background-color: yellow;
+}
