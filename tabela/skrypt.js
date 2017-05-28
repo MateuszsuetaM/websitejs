@@ -20,28 +20,6 @@ function zegar(){
   setTimeout("zegar()", 1000);
 }
 function tabela(){
-  // var dj = '{"plan":[{"imie":"mateusz"}]}';
-  // var dj = require('./plik.json');
-  //
-  //
-  // var xmlhttp = new XMLHttpRequest();
-  // xmlhttp.onreadystatechange = function() {
-  //     if (this.readyState == 4 && this.status == 200) {
-  //         myArr = JSON.parse(this.responseText);
-  //         document.getElementById("demo").innerHTML = myArr[0];
-  //     }
-  // };
-  // xmlhttp.open("GET", "plik.json", true);
-  // xmlhttp.send();
-
-
-  // var client = new XMLHttpRequest();
-  // client.open('GET', '/plik.json');
-  // client.onreadystatechange = function() {
-  //   alert(client.responseText);
-  //   }
-  // client.send();
-
 
 
   function loadJSON(callback) {
@@ -52,21 +30,23 @@ function tabela(){
   xobj.onreadystatechange = function () {
   if (xobj.readyState == 4 && xobj.status == "200") {
 
-  // .open will NOT return a value but simply returns undefined in async mode so use a callback
   callback(xobj.responseText);
 
   }
   }
   xobj.send(null);
   }
+
+  //------------------------
+
   var txt ="";
-  // Call to function with anonymous callback
+
   loadJSON(function(response) {
-  // Do Something with the response e.g.
   jsonresponse = JSON.parse(response);
-  // var json = jsonresponse[0].imie;
+
   txt += "<table border='1' class=\"tabelka\"><tbody>";
-  txt += "<tr><th>Dzień</th><th>Godzina</th><th>Przedmiot</th><th>Grupa</th><th>Typ</th><th>Sala</th><th>Uwagi</th></tr>"
+  txt +=   "<tr><th class=\"kom\">Dzień</th><th>Godzina</th><th>Przedmiot</th><th>Grupa</th><th>Typ</th><th>Sala</th><th>Uwagi</th></tr>";
+
   var a = 0;
   for (x in jsonresponse) {
 
@@ -75,28 +55,6 @@ function tabela(){
             }
 
   txt += "</td></tr></tbody></table>";
-  document.getElementById("imie").innerHTML = txt;// + ", " + obj.birth[0];
-  // document.getElementById("imie").innerHTML = jsonresponse[0].imie;// + ", " + obj.birth[0];
-
-  // Assuming json data is wrapped in square brackets as Drew suggests
-  //console.log(jsonresponse[0].name);
-// alert(jsonresponse[0].imie);
+  document.getElementById("imie").innerHTML = txt;
   });
 }
-
-  // var text = '[{"name":"John", "birth":"1986-12-14", "city":"New York"}]';
-
-    // var myJSON = JSON.stringify(obj);
-
-// alert(obj[0].imie);
-//   var x = obj[0].name;
-//   document.getElementById("tabela").innerHTML = x;// + ", " + obj.birth[0];
-  // document.getElementById("tabela").innerHTML = obj.array[0].name;// + ", " + obj.birth[0];
-  // document.getElementById("tabela").innerHTML =  obj.birth;
-
-
-
-  // var wartosc = JSON.parse(dj);
-  // document.getElementById("imie").innerHTML = wartosc.plan[0].imie;
-
-// }

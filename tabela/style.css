@@ -1,3 +1,7 @@
+
+table th.com{
+  width = 40%;
+}
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
@@ -54,7 +58,7 @@ table th {
   table th {
     display: none;
   }
-  
+
   table td {
     border-bottom: 1px solid #ddd;
     display: block;
